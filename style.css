@@ -1,0 +1,130 @@
+body {
+    font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; /* 使用更适合中文的字体 */
+    display: flex; /* 使用 flex 布局 */
+    gap: 20px; /* 面板间距 */
+    padding: 15px;
+    background-color: #f4f4f4; /* 淡灰色背景 */
+}
+
+.config-panel, .preview-panel {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff; /* 白色背景 */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* 轻微阴影 */
+}
+
+.config-panel {
+    width: 480px; /* 配置面板宽度 */
+    display: flex;
+    flex-direction: column; /* 内部元素垂直排列 */
+}
+
+.preview-panel {
+    flex-grow: 1; /* 预览面板占据剩余空间 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+fieldset {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 8px;
+    color: #333;
+}
+
+label {
+    display: inline-block; /* 让标签和输入框能在一行显示 */
+    margin-bottom: 8px;
+    min-width: 100px; /* 标签最小宽度，用于对齐 */
+    vertical-align: middle; /* 垂直居中对齐 */
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    margin-bottom: 10px;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* 包含 padding 和 border 在宽度内 */
+    width: calc(100% - 110px); /* 简单计算输入框宽度 */
+    vertical-align: middle;
+}
+
+input[type="radio"] {
+    margin-right: 3px;
+    vertical-align: middle;
+}
+input[type="radio"] + label {
+    min-width: auto; /* Radio 按钮的标签不需要最小宽度 */
+    margin-right: 15px;
+    margin-bottom: 10px; /* 保证换行间距 */
+}
+
+#temp-ranges label { /* 温度范围标签 */
+    min-width: 80px;
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 10px 18px;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #007bff; /* 蓝色按钮 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.2s ease; /* 平滑过渡效果 */
+}
+
+button:hover {
+    background-color: #0056b3; /* 鼠标悬停时变深 */
+}
+
+#svg-preview {
+    width: 95%;
+    max-width: 400px; /* 限制预览图最大尺寸 */
+    aspect-ratio: 1 / 1; /* 保持正方形 */
+    border: 1px dashed #aaa;
+    margin-top: 10px;
+    display: flex; /* 用于居中 SVG */
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+#svg-preview svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 标度区间输入样式 */
+#scale-intervals div {
+    margin-bottom: 5px;
+    display: flex; /* 让标签和输入框对齐 */
+    align-items: center;
+}
+#scale-intervals label {
+    min-width: 130px; /* 调整标签宽度以适应 "弦长" */
+    margin-bottom: 0; /* 移除底部边距 */
+}
+#scale-intervals input {
+    width: 100px; /* 固定输入框宽度 */
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+small {
+    color: #666;
+    font-size: 12px;
+    display: block; /* 独占一行 */
+    margin-top: 5px;
+}
